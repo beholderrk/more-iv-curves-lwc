@@ -1,4 +1,9 @@
-import { ColorType, IChartApiBase, LineType, createChartEx } from "lightweight-charts";
+import {
+  ColorType,
+  IChartApiBase,
+  LineType,
+  createChartEx,
+} from "lightweight-charts";
 import { useEffect, useRef } from "react";
 import { HorzScaleBehaviorPrice } from "./HorzScaleBehaviorPrice";
 import css from "./CurvesChart.module.css";
@@ -26,8 +31,8 @@ export function CurvesChart() {
           visible: true,
         },
         layout: {
-          background: { type: ColorType.Solid, color: 'transparent' },
-          textColor: "#fff"
+          background: { type: ColorType.Solid, color: "transparent" },
+          textColor: "#fff",
         },
         grid: {
           horzLines: {
@@ -37,7 +42,7 @@ export function CurvesChart() {
             visible: false,
           },
         },
-      }
+      },
     );
     chartRef.current = chart;
 
@@ -50,20 +55,20 @@ export function CurvesChart() {
         lineWidth: 1,
         crosshairMarkerVisible: false,
         color: "rgba(255, 255, 255, 0.1)",
-        lineType: LineType.Curved
+        lineType: LineType.Curved,
       });
       line.setData(
         genLine(
           0,
           5,
-          10,
+          30,
           polynomial1(
             randomFromTo(-4, -2),
             randomFromTo(25, 30),
             randomFromTo(-45, -35),
-            randomFromTo(30, 40)
-          )
-        )
+            randomFromTo(30, 40),
+          ),
+        ),
       );
     }
 
